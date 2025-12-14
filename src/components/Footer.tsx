@@ -124,9 +124,7 @@ export const Footer = () => {
         {/* Нижняя часть */}
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm font-cairo opacity-60 text-center md:text-left">
-              © 2024 Исламская онлайн-школа «Нур». Все права защищены.
-            </p>
+            <p className="text-sm font-cairo opacity-60 text-center md:text-left">© 2025 «Исламское наследие». Все права защищены.</p>
             <div className="flex gap-6 font-cairo text-sm">
               <a href="#" className="opacity-60 hover:opacity-100 hover:text-accent transition-all">
                 Политика конфиденциальности

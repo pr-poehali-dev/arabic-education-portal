@@ -92,6 +92,110 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold font-amiri mb-6 text-primary">
+              Наши курсы
+            </h2>
+            <p className="text-lg text-muted-foreground font-cairo max-w-2xl mx-auto">
+              Выберите программу обучения, которая соответствует вашему уровню и целям
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: 'Book',
+                title: 'Арабский язык',
+                description: 'От алфавита до чтения классических текстов',
+                price: 'от 5000 ₽/мес',
+                level: 'Начальный - Продвинутый'
+              },
+              {
+                icon: 'Scale',
+                title: 'Основы фикха',
+                description: 'Изучение основ исламского права',
+                price: 'от 5500 ₽/мес',
+                level: 'Средний'
+              },
+              {
+                icon: 'BookMarked',
+                title: 'Тафсир Корана',
+                description: 'Толкование избранных сур Корана',
+                price: 'от 5500 ₽/мес',
+                level: 'Средний'
+              },
+              {
+                icon: 'Scroll',
+                title: 'Хадисоведение',
+                description: 'Изучение достоверных хадисов',
+                price: 'от 6000 ₽/мес',
+                level: 'Продвинутый'
+              },
+              {
+                icon: 'Heart',
+                title: 'Акыда',
+                description: 'Основы исламского вероубеждения',
+                price: 'от 5000 ₽/мес',
+                level: 'Начальный'
+              },
+              {
+                icon: 'Library',
+                title: 'Все курсы',
+                description: 'Посмотреть полный список программ',
+                price: '',
+                level: ''
+              },
+            ].map((course, index) => (
+              <Card 
+                key={index} 
+                className="p-6 hover:shadow-xl transition-all animate-fade-in cursor-pointer group"
+                style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => onNavigate('courses')}
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Icon name={course.icon} size={24} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-bold font-amiri mb-2 text-primary">
+                  {course.title}
+                </h3>
+                <p className="text-muted-foreground font-cairo text-sm mb-3">
+                  {course.description}
+                </p>
+                {course.price && (
+                  <>
+                    <div className="text-xs text-muted-foreground font-cairo mb-2">
+                      {course.level}
+                    </div>
+                    <div className="text-lg font-bold text-accent font-cairo">
+                      {course.price}
+                    </div>
+                  </>
+                )}
+                {!course.price && (
+                  <div className="flex items-center text-primary font-cairo font-semibold mt-2">
+                    Узнать больше
+                    <Icon name="ArrowRight" size={16} className="ml-1" />
+                  </div>
+                )}
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button 
+              size="lg"
+              onClick={() => onNavigate('courses')}
+              className="text-lg font-cairo"
+            >
+              <Icon name="BookOpen" size={20} className="mr-2" />
+              Посмотреть все курсы
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">

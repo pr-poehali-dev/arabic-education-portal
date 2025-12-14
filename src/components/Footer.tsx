@@ -13,7 +13,7 @@ export const Footer = () => {
           {/* Логотип и описание */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-lg bg-accent flex items-center justify-center">
+              <div className="w-14 h-14 flex items-center justify-center bg-transparent rounded-0">
                 <span className="text-3xl">☪️</span>
               </div>
               <div>

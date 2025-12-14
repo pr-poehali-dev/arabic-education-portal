@@ -17,7 +17,7 @@ export const Footer = () => {
                 <span className="text-3xl">☪️</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold font-amiri text-accent">Нур</h3>
+                <h3 className="text-2xl font-bold font-amiri text-accent">Исламское наследие</h3>
                 <p className="text-sm font-cairo opacity-80">Онлайн-школа</p>
               </div>
             </div>

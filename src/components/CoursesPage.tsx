@@ -1,10 +1,25 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { Footer } from './Footer';
+import { useState } from 'react';
 
 export const CoursesPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    course: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Заявка на пробный урок:', formData);
+    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+    setFormData({ name: '', phone: '', course: '' });
+  };
+
   const courses = [
     {
       title: 'Арабский язык для начинающих',
@@ -138,6 +153,82 @@ export const CoursesPage = () => {
               </Button>
             </Card>
           ))}
+        </div>
+
+        {/* Форма записи на пробный урок */}
+        <div className="mt-20 max-w-3xl mx-auto animate-fade-in">
+          <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+            <div className="text-center mb-8">
+              <div className="inline-block p-3 bg-primary/10 rounded-full mb-4">
+                <Icon name="GraduationCap" size={40} className="text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold font-amiri text-primary mb-3">
+                Запишитесь на пробный урок
+              </h2>
+              <p className="text-muted-foreground font-cairo">
+                Первое занятие бесплатно! Познакомьтесь с нашими преподавателями и методикой обучения
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-semibold mb-2 font-cairo">
+                  Ваше имя
+                </label>
+                <Input
+                  type="text"
+                  placeholder="Введите ваше имя"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  className="font-cairo"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 font-cairo">
+                  Телефон
+                </label>
+                <Input
+                  type="tel"
+                  placeholder="+7 (___) ___-__-__"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="font-cairo"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 font-cairo">
+                  Выберите курс
+                </label>
+                <select
+                  value={formData.course}
+                  onChange={(e) => setFormData({ ...formData, course: e.target.value })}
+                  required
+                  className="w-full px-4 py-2 border border-input bg-background rounded-md font-cairo focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="">Выберите курс для пробного урока</option>
+                  {courses.map((course, idx) => (
+                    <option key={idx} value={course.title}>
+                      {course.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <Button type="submit" size="lg" className="w-full font-cairo text-lg">
+                <Icon name="Send" size={20} className="mr-2" />
+                Записаться на пробный урок
+              </Button>
+
+              <div className="flex items-center gap-2 text-sm text-muted-foreground font-cairo justify-center">
+                <Icon name="Shield" size={16} />
+                <span>Ваши данные защищены и не передаются третьим лицам</span>
+              </div>
+            </form>
+          </Card>
         </div>
       </div>
       <Footer />

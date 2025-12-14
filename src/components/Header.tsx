@@ -36,7 +36,7 @@ export const Header = ({ onNavigate, currentSection, onLoginClick }: HeaderProps
             <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-primary-foreground font-bold text-xl">
               ن
             </div>
-            <span className="font-amiri text-2xl font-bold text-primary">Нур</span>
+            <span className="font-amiri text-2xl font-bold text-primary">Исламское наследие</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-1">

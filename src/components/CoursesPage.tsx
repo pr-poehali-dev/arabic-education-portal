@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { Footer } from './Footer';
 
 export const CoursesPage = () => {
   const courses = [
@@ -139,6 +140,7 @@ export const CoursesPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

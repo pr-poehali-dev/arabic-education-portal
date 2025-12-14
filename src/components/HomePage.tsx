@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { IslamicPattern } from './IslamicPattern';
+import { Footer } from './Footer';
 
 interface HomePageProps {
   onNavigate: (section: string) => void;
@@ -124,6 +125,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

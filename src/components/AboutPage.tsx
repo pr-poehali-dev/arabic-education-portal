@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import { Footer } from './Footer';
 
 export const AboutPage = () => {
   const teachers = [
@@ -111,6 +112,7 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

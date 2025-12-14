@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import { Footer } from './Footer';
 
 export const SchedulePage = () => {
   const [selectedDay, setSelectedDay] = useState('monday');
@@ -138,6 +139,7 @@ export const SchedulePage = () => {
           ))}
         </Tabs>
       </div>
+      <Footer />
     </div>
   );
 };

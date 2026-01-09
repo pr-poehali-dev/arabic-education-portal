@@ -104,6 +104,11 @@ export const Footer = () => {
                 <Icon name="Send" size={18} className="text-accent group-hover:text-primary" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-accent/20 hover:bg-accent flex items-center justify-center transition-all group">
+                <svg className="w-[18px] h-[18px] text-accent group-hover:text-primary transition-colors" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25.5 35.9h-2.38c-8.36 0-13.13-5.73-13.35-15.23h4.13c.14 6.96 3.21 9.91 5.64 10.52V20.67h3.88v6.06c2.39-.26 4.92-2.99 5.77-6.06h3.88c-.65 3.67-3.37 6.37-5.3 7.48 1.93.93 4.99 3.28 6.16 7.75h-4.28c-.91-2.96-3.17-5.26-6.16-5.57v5.57Z"/>
+                </svg>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-accent/20 hover:bg-accent flex items-center justify-center transition-all group">
                 <Icon name="Youtube" size={18} className="text-accent group-hover:text-primary" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-accent/20 hover:bg-accent flex items-center justify-center transition-all group">
